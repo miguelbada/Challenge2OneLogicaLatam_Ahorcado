@@ -4,6 +4,14 @@ var pincel = pantalla.getContext("2d");
 pincel.fillStyle = "lightgrey";
 pincel.fillRect(0, 0, 1200 ,800);
 
+function myFunction(event) {
+    var x = event.key;
+    pincel.font = '100px serif';
+    pincel.fillText(x, 100, 100);
+  //document.getElementById("demo").innerHTML = "The pressed key was: " + x;
+
+}
+
 
 pincel.lineWidth = 5;
 
@@ -31,9 +39,9 @@ function circulo(contexto, inicioX, inicioY, radio) {
 }
 
 function dibujarHorca() {
-    triangulo(pincel, 150, 700, 50);
-    linea(pincel, 150, 700, 150, 100);
-    linea(pincel, 150, 100, 400, 100);
+    triangulo(pincel, 100, 700, 50);
+    linea(pincel, 100, 700, 100, 100);
+    linea(pincel, 100, 100, 400, 100);
     linea(pincel, 400, 100, 400, 200);
 }
 
