@@ -1,31 +1,18 @@
-var pantalla = document.querySelector("canvas");
-var pincel = pantalla.getContext("2d");
-var key = "";
+var ahorcado = new Ahorcado();
 
-//pincel.fillStyle = "yellow";
-//pincel.fillRect(550, 250, 600 ,300); //rectangulo de letras presionadas
-var coorX = 550;
-var coorY = 250;
+ahorcado.dibujar();
 
-function setKey(letra) {
-    key = letra;
-}
+function prepararHorca() {
 
-function dibujarKey() {
-    if(!palabraSecreta.includes(key)) {
-        dibujarKeyPantalla();
-    } else {
-        dibujarLetra();
+    if(!isDibujar()) {
+        ahorcado.nextState();
+        ahorcado.dibujar();
     }
-}
-
-function dibujarKeyPantalla() {
-    pincel.fillText(key, 550, 250);
+    
+    dibujarKey();
 }
 
 document.addEventListener('keydown', function(event) {
     setKey(event.key);
-    dibujarKey();
+    prepararHorca();
 }, false);
-
-
