@@ -8,4 +8,8 @@ buttonInicio.addEventListener("click", function() {
     pincel.clearRect(520, 180, 680, 100);
     setPalabraSecreta();
     dibujarCuadrados(getPalabraSecreta().length);
+    document.addEventListener("keydown", function(event) {
+        setKey(event.key);
+        prepararHorca();
+    }, false);
 })

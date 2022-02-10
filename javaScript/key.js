@@ -27,9 +27,8 @@ function dibujarKey() {
 }
 
 function dibujarKeyPantalla() {
-    
-    pincel.font = '90px serif';
-    pincel.fillStyle = "black";
-    pincel.fillText(key, coorX, COOR_Y);
-    coorX+= 70;
+        pincel.font = '90px serif';
+        pincel.fillStyle = "black";
+        pincel.fillText(key, coorX, COOR_Y);
+        coorX+= 70;
 }
