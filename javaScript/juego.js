@@ -1,7 +1,7 @@
 var ahorcado = new Ahorcado();
 var background = "#b3daff";
 
-ahorcado.dibujar();
+//ahorcado.dibujar();
 
 function isFinDelJuego() {
 
@@ -40,11 +40,11 @@ function pantallaHorca() {
     pincel.clearRect(0, 0, 1200, 800);
     pincel.fillStyle = background;
     pincel.fillRect(0, 0, 1200, 800);
-    ahorcado.dibujar();
 }
 
 function resetAhorcado() {
     ahorcado = new Ahorcado();
+    ahorcado.dibujar();
 }
 
 pantallaHorca();
