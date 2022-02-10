@@ -5,6 +5,7 @@ const INICIO_LINEA_X = 250;
 
 var palabrasSecretas = ["canguro", "astronauta", "camarote", "arboleda", "ciencia", "antena", "javascript"];
 var palabraSecreta = "";
+var aciertos = 0;
 
 function palabraSecretaRandom() {
     var indice = Math.floor(Math.random() * palabrasSecretas.length);
@@ -12,8 +13,15 @@ function palabraSecretaRandom() {
     return palabrasSecretas[indice];
 }
 
+function isPalabraSecreta(palabra) {
+
+    return palabrasSecretas.includes(palabra);
+}
+
 function addPalabraSecreta(palabra) {
-    palabrasSecretas.push(palabra);
+    if(!isPalabraSecreta(palabra) && !(palabra == "")) {
+        palabrasSecretas.push(palabra)
+    }
 }
 
 function getPalabraSecreta() {
@@ -22,15 +30,17 @@ function getPalabraSecreta() {
 
 function setPalabraSecreta() {
     palabraSecreta = palabraSecretaRandom();
+    aciertos = 0;
 }
 
 
 pincel.fillStyle = "black";
 pincel.font = '90px serif';
 
-function dibujarCuadrados(numero) {
+function dibujarGuiones(numero) {
     let inicio = INICIO_LINEA_X;
 
+    pincel.fillStyle = "black";
     for(var i = 0; i < numero; i++) {
         pincel.fillRect(inicio, 743, 55, 7);
         inicio+= 70;
@@ -43,6 +53,7 @@ function dibujarLetra() {
     for(var i = 0; i < palabraSecreta.length; i++) {
         if(palabraSecreta[i] == key) {
             pincel.fillText(palabraSecreta[i], inicio, 725);
+            aciertos++;
         }
         
         inicio+= 70;

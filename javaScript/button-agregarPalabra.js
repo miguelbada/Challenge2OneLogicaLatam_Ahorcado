@@ -4,5 +4,6 @@ buttonAgregar.addEventListener("click", function() {
     var palabra = document.querySelector("#input-palabra").value;
 
     addPalabraSecreta(palabra);
+    document.querySelector("#input-palabra").value = "";
     
 })

@@ -1,13 +1,6 @@
 var pantalla = document.querySelector("canvas");
 var pincel = pantalla.getContext("2d");
 
-function myFunction(event) {
-    var x = event.key;
-    pincel.font = '100px serif';
-    pincel.fillText(x, 100, 100);
-}
-
-
 pincel.lineWidth = 5;
 
 function linea(contexto, inicioX, inicioY, finX, finY) {
@@ -63,4 +56,18 @@ function pieDerecho() {
 
 function pieIzquierdo() {
     linea(pincel, 400, 500, 470, 600);
+}
+
+function mensajeFinal(mensaje, color) {
+    pincel.font = '80px serif';
+    pincel.fillStyle = color;
+    pincel.fillText(mensaje, 500, 400);  
+}
+
+function ganador() {
+    mensajeFinal("Ganaste, felicidades!", "green");
+}
+
+function finJuego() {
+    mensajeFinal("Fin del juego!", "red");
 }

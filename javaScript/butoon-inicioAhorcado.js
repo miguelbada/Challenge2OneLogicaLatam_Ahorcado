@@ -2,14 +2,24 @@ var pantalla = document.querySelector("canvas");
 var pincel = pantalla.getContext("2d");
 
 var buttonInicio = document.querySelector("#button-inicioAhorcado");
+var capturarKey = document;
+
+function terminarJuego() {
+    capturarKey.removeEventListener("keydown", preparacionJuego);
+}
+
+function preparacionJuego(evento) {
+    setKey(evento.key);
+    prepararHorca();
+}
 
 buttonInicio.addEventListener("click", function() {
-    pincel.clearRect(250, 650, 1000 ,100);
-    pincel.clearRect(520, 180, 680, 100);
+    pantallaHorca();
+    resetKeysYCoorX();
+    resetAhorcado();
     setPalabraSecreta();
-    dibujarCuadrados(getPalabraSecreta().length);
-    document.addEventListener("keydown", function(event) {
-        setKey(event.key);
-        prepararHorca();
-    }, false);
+    dibujarGuiones(getPalabraSecreta().length);
+
+    capturarKey.addEventListener("keydown", preparacionJuego);
 })
+

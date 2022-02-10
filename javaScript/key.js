@@ -1,8 +1,9 @@
 var pantalla = document.querySelector("canvas");
 var pincel = pantalla.getContext("2d");
 var key = "";
+var keys = [];
 
-const COOR_X = 550;
+const COOR_X = 570;
 const COOR_Y = 250;
 
 var coorX = COOR_X;
@@ -21,9 +22,24 @@ function isDibujar() {
     return palabraSecreta.includes(key);
 } 
 
-function dibujarKey() {
+function isKey() {
 
-    isDibujar() ? dibujarLetra() : dibujarKeyPantalla();
+    return keys.includes(key);
+}
+
+function addKey() {
+    if(!keys.includes(key)) {
+        keys.push(key);
+    }
+}
+
+function dibujarKey() {
+    if(isDibujar() && !isKey()) {
+        dibujarLetra();
+        addKey(key);
+    } else if(!isKey() && !isDibujar()) {
+        dibujarKeyPantalla();
+    }
 }
 
 function dibujarKeyPantalla() {
@@ -31,4 +47,9 @@ function dibujarKeyPantalla() {
         pincel.fillStyle = "black";
         pincel.fillText(key, coorX, COOR_Y);
         coorX+= 70;
+}
+
+function resetKeysYCoorX() {
+    coorX = COOR_X;
+    keys = [];
 }
