@@ -1,3 +1,5 @@
+import { key } from "./key.js";
+
 var pantalla = document.querySelector("canvas");
 var pincel = pantalla.getContext("2d");
 
@@ -59,3 +61,5 @@ function dibujarLetra() {
         inicio+= 70;
     }
 }
+
+export {setPalabraSecreta, dibujarGuiones, dibujarLetra, getPalabraSecreta, addPalabraSecreta, palabraSecreta, aciertos, pincel};

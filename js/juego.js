@@ -1,7 +1,11 @@
+import terminarJuego from "./butoon-inicioAhorcado.js";
+import { dibujarKey, isDibujar, isKey, addKey, key } from "./key.js";
+import { palabraSecreta, aciertos, pincel } from "./lineaDePalabra.js";
+import Ahorcado from "./Ahorcado.js";
+import { finJuego, ganador } from "./canvas.js";
+
 var ahorcado = new Ahorcado();
 var background = "#b3daff";
-
-//ahorcado.dibujar();
 
 function isFinDelJuego() {
 
@@ -48,3 +52,5 @@ function resetAhorcado() {
 }
 
 pantallaHorca();
+
+export {pantallaHorca, resetAhorcado, prepararHorca};

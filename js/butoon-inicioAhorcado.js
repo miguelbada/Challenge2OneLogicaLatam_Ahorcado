@@ -1,6 +1,10 @@
+import { isValidkey } from "./validacion.js";
+import { pantallaHorca, resetAhorcado, prepararHorca } from "./juego.js";
+import { resetKeysYCoorX, setKey } from "./key.js";
+import { setPalabraSecreta, getPalabraSecreta, dibujarGuiones } from "./lineaDePalabra.js";
+
 var pantalla = document.querySelector("canvas");
-var pincel = pantalla.getContext("2d");
-const LETRAS_PERMITIDAS = "abcdefghijklmnñopqrstuvwxyz";
+/* var pincel = pantalla.getContext("2d"); */
 
 var buttonInicio = document.querySelector("#button-inicioAhorcado");
 var capturarKey = document;
@@ -9,19 +13,10 @@ function terminarJuego() {
     capturarKey.removeEventListener("keydown", preparacionJuego);
 }
 
-function isLetrasPermitidas(letra) {
-    let valor = false;
-    for(var i=0; i < LETRAS_PERMITIDAS.length; i++) {
-        if(LETRAS_PERMITIDAS[i] == letra) {
-            valor = true;
-        }
-    }
-    
-    return valor;
-}
 
 function preparacionJuego(evento) {
-    if(isLetrasPermitidas(evento.key)) {
+
+    if(isValidkey(evento)) {
         setKey(evento.key);
         prepararHorca();
     }
@@ -36,4 +31,6 @@ buttonInicio.addEventListener("click", function() {
 
     capturarKey.addEventListener("keydown", preparacionJuego);
 })
+
+export default terminarJuego;
 

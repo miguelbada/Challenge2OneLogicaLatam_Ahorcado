@@ -1,3 +1,5 @@
+import { BaseHorca } from "./AhorcadoStatus.js";
+
 class Ahorcado {
     constructor() {
         this.state = new BaseHorca();
@@ -16,4 +18,6 @@ class Ahorcado {
         return this.state.nombre;
     }
 }
+
+export default Ahorcado;
 

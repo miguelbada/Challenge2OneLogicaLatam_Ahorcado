@@ -71,3 +71,5 @@ function ganador() {
 function finJuego() {
     mensajeFinal("Fin del juego!", "red");
 }
+
+export {baseHorca, horca1, horca2, horca3, cabeza, cuerpo, brazoDerecho, brazoIzquierdo, pieDerecho, pieIzquierdo, ganador, finJuego};

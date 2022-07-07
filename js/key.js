@@ -1,3 +1,5 @@
+import { palabraSecreta, dibujarLetra } from "./lineaDePalabra.js";
+
 var pantalla = document.querySelector("canvas");
 var pincel = pantalla.getContext("2d");
 var key = "";
@@ -9,7 +11,7 @@ const COOR_Y = 250;
 var coorX = COOR_X;
 
 function setKey(letra) {
-    key = letra;
+        key = letra;
 }
 
 function getKey() {
@@ -53,3 +55,5 @@ function resetKeysYCoorX() {
     coorX = COOR_X;
     keys = [];
 }
+
+export {resetKeysYCoorX, setKey, dibujarKey, isDibujar, isKey, addKey, key}

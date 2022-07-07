@@ -1,3 +1,5 @@
+import { baseHorca, horca1, horca2, horca3, cabeza, cuerpo, pieDerecho, pieIzquierdo, brazoDerecho, brazoIzquierdo } from "./canvas.js";
+
 class AhorcadoStatus {
     constructor(nombre, nextStatus) {
         this.nombre = nombre;
@@ -108,3 +110,5 @@ class PieIzquierdo extends AhorcadoStatus {
         pieIzquierdo();
     }
 }
+
+export {BaseHorca};
