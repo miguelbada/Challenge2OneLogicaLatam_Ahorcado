@@ -12,7 +12,7 @@ Requisitos:
 - Al completar o dibujo de la horca, muestra un mensaje "Fin del juego" en la pantalla;
 - Si se completa la palabra correcta antes de que se acaben los intentos, muestra un mensaje de "Ganaste, Felicidades!" en la pantalla.
 - La página muestra guiones indicando cada letra de la palabra, separados por un espacio;
-- Para comenzar el juego debe presionar elbotón de "Iniciar Juego";
+- Para comenzar el juego debe presionar el botón de "Iniciar Juego";
 - No es posible escribir números dentro del juego.
 - Las letras equivocadas aparecen en la pantalla;
 - Las letras correctas aparecen en la pantalla encima de los guiones, en la posición correcta con relación a la palabra.
